@@ -1,13 +1,26 @@
-class LoginPage{
-    get usernameInput() { return $('#txtUsername'); }
-    get passwordInput() { return $('txtPassword');  }
-    get loginButton() { return $x('//*[@id="frmLogin"]/div[4]/button'); }
+const { Builder, By } = require('selenium-webdriver');
+const SystemUtil = require('../Properties/SystemUtil');
 
-    successLogin(username, password) {
-        this.usernameInput.setValue(username);
-        this.passwordInput.setValue(password);
-        this.loginButton.click();
+class LoginPage {
+    constructor(driver){
+        this.driver = driver;
+    }
+   
+
+  async successLogin(username, password) {
+    
+        const usernameField = await driver.findElement(By.id('txtUsername'));
+        await usernameField.sendKeys(username);
+
+        // Enter password
+        const passwordField = await driver.findElement(By.id('txtPassword'));
+        await passwordField.sendKeys(password);
+
+        // Click on the login button
+        const loginButton = await driver.findElement(By.xpath('//*[@id="frmLogin"]/div[4]/button'));
+        await loginButton.click();
+    
     }
 }
 
-module.exports = new LoginPage();
+module.exports = LoginPage;

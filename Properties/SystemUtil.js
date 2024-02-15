@@ -1,9 +1,20 @@
-class SystemUtil {
-    get sytemUrl() {return 'https://devmini-trials711.orangehrmlive.com/auth/seamlessLogin'; }
+var webdriver = require('selenium-webdriver');
+const {By} = require('selenium-webdriver');
+var driver = new webdriver.Builder().forBrowser('chrome').build();
 
-    openSystem(){
-        browser.url(this.sytemUrl);
+class SystemUtil{
+    constructor(){
+        global.driver = driver;
     }
-}
 
-module.exports = new SystemUtil();
+    async openSystem() {
+        
+        await driver.get('https://devmini-trials711.orangehrmlive.com/auth/seamlessLogin');
+        await driver.manage().window().maximize();
+    };
+
+       static closeSystem() {
+        driver.quit();
+    };
+}
+    module.exports = SystemUtil;
