@@ -2,16 +2,16 @@ const { Builder, By } = require('selenium-webdriver');
 const SystemUtil = require('../Properties/SystemUtil');
 
 class LoginPage {
+
     constructor(driver){
-        this.driver = driver;
+        this.driver = driver;       
     }
-   
 
   async successLogin(username, password) {
     
-        const usernameField = await driver.findElement(By.id('txtUsername'));
-        await usernameField.sendKeys(username);
-
+       const usernameField = await driver.findElement(By.id('txtUsername'));
+       await usernameField.sendKeys(username);
+     
         // Enter password
         const passwordField = await driver.findElement(By.id('txtPassword'));
         await passwordField.sendKeys(password);
