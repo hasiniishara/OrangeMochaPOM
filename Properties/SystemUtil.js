@@ -1,20 +1,27 @@
 var webdriver = require('selenium-webdriver');
-const {By} = require('selenium-webdriver');
+
+// creating web driver as a global variable object
 var driver = new webdriver.Builder().forBrowser('chrome').build();
 
+//creat SystemUtil Class
 class SystemUtil{
+
+    //call constructor
     constructor(){
         global.driver = driver;
     }
 
-    async openSystem() {
-        
+    // System open function
+    async openSystem() {      
         await driver.get('https://devmini-trials711.orangehrmlive.com/auth/seamlessLogin');
         await driver.manage().window().maximize();
     };
 
-       static closeSystem() {
+    //Close the system
+    static closeSystem() {
         driver.quit();
     };
 }
-    module.exports = SystemUtil;
+
+//Export SystemUtil class
+module.exports = SystemUtil;
