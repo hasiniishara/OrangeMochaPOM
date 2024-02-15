@@ -3,7 +3,7 @@ var webdriver = require('selenium-webdriver');
 // creating web driver as a global variable object
 var driver = new webdriver.Builder().forBrowser('chrome').build();
 
-//creat SystemUtil Class
+//Creat SystemUtil Class
 class SystemUtil{
 
     //call constructor

@@ -1,26 +1,32 @@
-const { Builder, By } = require('selenium-webdriver');
-const SystemUtil = require('../Properties/SystemUtil');
+const { By } = require('selenium-webdriver');
 
+//Creat LoginPage Class
 class LoginPage {
 
+    //Call constructor
     constructor(driver){
         this.driver = driver;       
     }
 
-  async successLogin(username, password) {
+    //Create Successfull Login function
+    async successLogin(username, password) {
     
+       //Find user name field web element
        const usernameField = await driver.findElement(By.id('txtUsername'));
+       //Pass user name
        await usernameField.sendKeys(username);
      
-        // Enter password
-        const passwordField = await driver.findElement(By.id('txtPassword'));
-        await passwordField.sendKeys(password);
+       //Find password field web element
+       const passwordField = await driver.findElement(By.id('txtPassword'));
+       //Pass user password
+       await passwordField.sendKeys(password);
 
-        // Click on the login button
-        const loginButton = await driver.findElement(By.xpath('//*[@id="frmLogin"]/div[4]/button'));
-        await loginButton.click();
-    
+       //Find Login button
+       const loginButton = await driver.findElement(By.xpath('//*[@id="frmLogin"]/div[4]/button'));
+       //Click on the login button
+       await loginButton.click();
     }
 }
 
+//Export LoginPage class
 module.exports = LoginPage;
