@@ -4,7 +4,7 @@
   "description": "This is a Test Automation project. It used following technologies.",
   "main": "index.js",
   "scripts": {
-    "TestCases": "mocha --no-timeouts --reporter mochawesome --require mochawesome/register TestCases/Sanitytest.js"
+    "TestCases": "mocha --no-timeouts --reporter mochawesome --require mochawesome/register TestCases/Sanitytest.js --reporter-options reportDir=/Users/acer/Desktop/OrangeMochaPOM/OrangeMochaPOM/TestReport,reportFilename=TestResults"
   },
   "author": "",
   "license": "ISC",
