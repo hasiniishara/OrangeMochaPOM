@@ -41,3 +41,6 @@ describe('Login Page Test', () => {
         assert.equal(dashHeader, 'Employee Management', 'Header text does not match the expected value.');     
     });
 });
+
+
+//To run this  npm run TestCases. command is define in package.json file.

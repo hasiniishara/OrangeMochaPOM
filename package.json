@@ -4,13 +4,14 @@
   "description": "This is a Test Automation project. It used following technologies.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "TestCases": "mocha --no-timeouts --reporter mochawesome --require mochawesome/register TestCases/Sanitytest.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chai": "^5.1.0",
     "mocha": "^10.3.0",
+    "mochawesome": "^7.1.3",
     "selenium-webdriver": "^4.17.0"
   }
 }
