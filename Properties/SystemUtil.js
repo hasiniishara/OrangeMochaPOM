@@ -13,7 +13,7 @@ class SystemUtil{
 
     // System open function
     async openSystem() {      
-        await driver.get('https://devmini-trials711.orangehrmlive.com/auth/seamlessLogin');
+        await driver.get('https://devminitest-trials711.orangehrmlive.com/auth/seamlessLogin');
         await driver.manage().window().maximize();
     };
 
