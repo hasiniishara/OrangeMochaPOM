@@ -1,24 +1,24 @@
 {
   "stats": {
-    "suites": 1,
-    "tests": 0,
-    "passes": 0,
+    "suites": 2,
+    "tests": 1,
+    "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2024-02-17T17:50:26.703Z",
-    "end": "2024-02-17T17:50:28.488Z",
-    "duration": 1785,
+    "start": "2024-02-19T08:59:41.246Z",
+    "end": "2024-02-19T08:59:52.547Z",
+    "duration": 11301,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
-    "other": 1,
-    "hasOther": true,
-    "skipped": 1,
-    "hasSkipped": true
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
   },
   "results": [
     {
-      "uuid": "e6aa59af-807a-444b-b624-f4204bb9c5d8",
+      "uuid": "63c52aaf-faf3-45e0-93eb-f221457e2072",
       "title": "",
       "fullFile": "C:\\Users\\acer\\Desktop\\OrangeMochaPOM\\OrangeMochaPOM\\TestCases\\Sanitytest.js",
       "file": "\\TestCases\\Sanitytest.js",
@@ -27,81 +27,96 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "2e1d2766-f3e6-475e-abb0-86fe08ddaa91",
-          "title": "Login Page Test",
+          "uuid": "141e0270-5bdd-4b92-a1aa-d4cf1d3c0236",
+          "title": "Sanity Test",
           "fullFile": "C:\\Users\\acer\\Desktop\\OrangeMochaPOM\\OrangeMochaPOM\\TestCases\\Sanitytest.js",
           "file": "\\TestCases\\Sanitytest.js",
-          "beforeHooks": [
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
             {
-              "title": "\"before each\" hook for \"should log in successfully with valid credentials\"",
-              "fullTitle": "Login Page Test \"before each\" hook for \"should log in successfully with valid credentials\"",
-              "timedOut": false,
-              "duration": 1777,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
-              "pending": false,
-              "context": null,
-              "code": "// create page objects\nsystemUtil = new SystemUtil();\nloginPage = new LoginPage(systemUtil.driver);\ndashboardPage = new DashboardPage(systemUtil.driver);\n//Open System\nawait systemUtil.openSystem();\n//Login to the System\nawait loginPage.successLogin(users.uName, users.uPassword);",
-              "err": {
-                "message": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"*[id=\"txtUsername\"]\"}\n  (Session info: chrome=121.0.6167.162)",
-                "estack": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"*[id=\"txtUsername\"]\"}\n  (Session info: chrome=121.0.6167.162)\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:524:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:605:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:533:28)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async thenableWebDriverProxy.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:746:17)\n    at async LoginPage.successLogin (PageObjects\\LoginPage.js:15:30)\n    at async Context.<anonymous> (TestCases\\Sanitytest.js:26:9)",
-                "diff": null
-              },
-              "uuid": "aed8069a-2eb0-414b-af57-45fbfd82c750",
-              "parentUUID": "2e1d2766-f3e6-475e-abb0-86fe08ddaa91",
-              "isHook": true,
-              "skipped": false
+              "uuid": "3db915a9-b231-4a49-b943-0dbd434b447b",
+              "title": "Login to the System",
+              "fullFile": "C:\\Users\\acer\\Desktop\\OrangeMochaPOM\\OrangeMochaPOM\\TestCases\\Sanitytest.js",
+              "file": "\\TestCases\\Sanitytest.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before each\" hook in \"Login to the System\"",
+                  "fullTitle": "Sanity Test Login to the System \"before each\" hook in \"Login to the System\"",
+                  "timedOut": false,
+                  "duration": 11248,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// create page objects\nsystemUtil = new SystemUtil();\nloginPage = new LoginPage(systemUtil.driver);\ndashboardPage = new DashboardPage(systemUtil.driver);\n//Open System\nawait systemUtil.openSystem();\n//Login to the System\nawait loginPage.successLogin(users.uName, users.uPassword);",
+                  "err": {},
+                  "uuid": "bcbf2907-74e8-41b8-a044-2436b9bd4081",
+                  "parentUUID": "3db915a9-b231-4a49-b943-0dbd434b447b",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [
+                {
+                  "title": "\"after each\" hook in \"Login to the System\"",
+                  "fullTitle": "Sanity Test Login to the System \"after each\" hook in \"Login to the System\"",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "//Close the system.\nawait SystemUtil.closeSystem();",
+                  "err": {},
+                  "uuid": "87482b0a-a00d-4d25-a870-e5cc2b7a4ec7",
+                  "parentUUID": "3db915a9-b231-4a49-b943-0dbd434b447b",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "tests": [
+                {
+                  "title": "should log in successfully with valid credentials",
+                  "fullTitle": "Sanity Test Login to the System should log in successfully with valid credentials",
+                  "timedOut": false,
+                  "duration": 42,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// Getting Dahsboard header text & store it to dashHeader variable.\nconst dashHeader = await dashboardPage.verifyDashboardHeader();\n//Check it's equal 'Employee Management'.\nassert.equal(dashHeader, 'Employee Management', 'Header text does not match the expected value.');",
+                  "err": {},
+                  "uuid": "6963efde-0c99-4cd8-a8a7-3b7d396c2c2f",
+                  "parentUUID": "3db915a9-b231-4a49-b943-0dbd434b447b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "6963efde-0c99-4cd8-a8a7-3b7d396c2c2f"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 42,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 0
             }
           ],
-          "afterHooks": [
-            {
-              "title": "\"after each\" hook in \"Login Page Test\"",
-              "fullTitle": "Login Page Test \"after each\" hook in \"Login Page Test\"",
-              "timedOut": false,
-              "duration": 1,
-              "state": null,
-              "speed": null,
-              "pass": false,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "//Close the system.\nawait SystemUtil.closeSystem();",
-              "err": {},
-              "uuid": "8d4fc891-7dba-49ba-83ab-adb5ba90f184",
-              "parentUUID": "2e1d2766-f3e6-475e-abb0-86fe08ddaa91",
-              "isHook": true,
-              "skipped": false
-            }
-          ],
-          "tests": [
-            {
-              "title": "should log in successfully with valid credentials",
-              "fullTitle": "Login Page Test should log in successfully with valid credentials",
-              "timedOut": false,
-              "duration": 0,
-              "state": null,
-              "speed": null,
-              "pass": false,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "// Getting Dahsboard header text & store it to dashHeader variable.\nconst dashHeader = await dashboardPage.verifyDashboardHeader();\n//Check it's equal 'Employee Management'.\nassert.equal(dashHeader, 'Employee Management', 'Header text does not match the expected value.');",
-              "err": {},
-              "uuid": "c6f35c43-e9bb-42f5-beb9-ed4eb72b0505",
-              "parentUUID": "2e1d2766-f3e6-475e-abb0-86fe08ddaa91",
-              "isHook": false,
-              "skipped": true
-            }
-          ],
-          "suites": [],
           "passes": [],
           "failures": [],
           "pending": [],
-          "skipped": [
-            "c6f35c43-e9bb-42f5-beb9-ed4eb72b0505"
-          ],
+          "skipped": [],
           "duration": 0,
           "root": false,
           "rootEmpty": false,
