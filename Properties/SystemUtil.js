@@ -1,28 +1,24 @@
 var webdriver = require('selenium-webdriver');
-const { Duration } = require('selenium-webdriver');
-
-// creating web driver as a global variable object
-//var driver = new webdriver.Builder().forBrowser('chrome').build();
 
 //Creat SystemUtil Class
 class SystemUtil{
-
     //call constructor
     constructor(){
-        //global.driver = driver;
+       //Initialize driver as null.
         this.driver = null;
     }
 
     // System open function
     async openSystem() {  
-        
-        // await driver.get('https://devminitest-trials711.orangehrmlive.com/auth/seamlessLogin');
-        // await driver.manage().window().maximize();
-        // await driver.manage().setTimeouts({ implicit: 100000 });
+        //Checking driver is null.
         if (!this.driver) {
+            //If driver is null, then create new driver
             this.driver = await new webdriver.Builder().forBrowser('chrome').build();
+            //Open System url.
             await this.driver.get('https://devminitest-trials711.orangehrmlive.com/auth/seamlessLogin');
+            //Maximize the driver window.
             await this.driver.manage().window().maximize();
+            //Set time out.
             await this.driver.manage().setTimeouts({ implicit: 100000 });
         }
         
@@ -30,18 +26,12 @@ class SystemUtil{
 
     //Close the system
     async closeSystem() {
-        // if (driver == null) {
-        // driver.close();
-        // }
-    
-        //driver.quit();
-
         if (this.driver) {
             // Close the driver if it exists
             await this.driver.quit();
-            this.driver = null; // Reset driver to null after quitting
-        }
-        
+            // Reset driver to null after quitting
+            this.driver = null; 
+        }  
     };
 
      // Reset implicit wait timeout
