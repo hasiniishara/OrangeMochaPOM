@@ -11,16 +11,19 @@ class DashboardPage {
     // Verifying Dashboard Header Text
     async verifyDashboardHeader(){
         //Find dashboard page header text
-        const dashboardHeader = await driver.findElement(By.xpath('//*[@id="topbar"]/ul[1]/li/div'));
+        const dashboardHeader = await this.driver.findElement(By.xpath('//*[@id="topbar"]/ul[1]/li/div'));
         //Get Header Title item text
-        return dashboardHeader.getText();
+        const headText = await dashboardHeader.getText();
+        console.log(headText);
+        return headText;
     }
 
     //Click Admin Module
     async clickAdminModule(){
         //Find Admin Module Button
-        const adminModuleButton = await this.driver.findElement(By.xpath('//*[@id="menu_item_101"]/span'));
-        adminModuleButton.click();
+        const adminModuleButton = await this.driver.findElement(By.id('left_menu_item_10'));
+        await adminModuleButton.click();
+        //const adminText = await adminModuleButton.getText();
     }
 }
 
