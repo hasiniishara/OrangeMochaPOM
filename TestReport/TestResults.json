@@ -1,24 +1,24 @@
 {
   "stats": {
-    "suites": 3,
-    "tests": 2,
-    "passes": 2,
+    "suites": 2,
+    "tests": 0,
+    "passes": 0,
     "pending": 0,
     "failures": 0,
-    "start": "2024-02-22T15:34:26.000Z",
-    "end": "2024-02-22T15:34:57.561Z",
-    "duration": 31561,
-    "testsRegistered": 2,
-    "passPercent": 100,
+    "start": "2024-02-22T16:23:16.322Z",
+    "end": "2024-02-22T16:23:22.519Z",
+    "duration": 6197,
+    "testsRegistered": 3,
+    "passPercent": 0,
     "pendingPercent": 0,
-    "other": 0,
-    "hasOther": false,
-    "skipped": 0,
-    "hasSkipped": false
+    "other": 1,
+    "hasOther": true,
+    "skipped": 3,
+    "hasSkipped": true
   },
   "results": [
     {
-      "uuid": "5278c504-535f-4da6-b98b-152f9173434a",
+      "uuid": "547dbb3a-7e11-4673-8911-cf3c08458cfb",
       "title": "",
       "fullFile": "C:\\Users\\acer\\Desktop\\OrangeMochaPOM\\OrangeMochaPOM\\TestCases\\Sanitytest.js",
       "file": "\\TestCases\\Sanitytest.js",
@@ -27,26 +27,30 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "21e21d19-85fe-4d5f-8c46-f2a36bf74968",
+          "uuid": "39242719-e41a-42e8-a517-9334f9e9513d",
           "title": "Sanity Test",
           "fullFile": "C:\\Users\\acer\\Desktop\\OrangeMochaPOM\\OrangeMochaPOM\\TestCases\\Sanitytest.js",
           "file": "\\TestCases\\Sanitytest.js",
           "beforeHooks": [
             {
-              "title": "\"before each\" hook in \"Sanity Test\"",
-              "fullTitle": "Sanity Test \"before each\" hook in \"Sanity Test\"",
+              "title": "\"before each\" hook for \"Should log in successfully with valid credentials\"",
+              "fullTitle": "Sanity Test \"before each\" hook for \"Should log in successfully with valid credentials\"",
               "timedOut": false,
-              "duration": 17436,
-              "state": null,
+              "duration": 5970,
+              "state": "failed",
               "speed": null,
               "pass": false,
-              "fail": false,
+              "fail": true,
               "pending": false,
               "context": null,
               "code": "//create systemUtil object\nsystemUtil = new SystemUtil();\n//Call openSystem() function define in the SystemUtill.js file. Open the system.\nawait systemUtil.openSystem();\n//Create page objects.\nloginPage = new LoginPage(systemUtil.driver);\ndashboardPage = new DashboardPage(systemUtil.driver);\nadminPage = new AdminPage(systemUtil.driver);\n//Call successLogin() function define in the LoginPage.js file. Log in to the system. Geeting user name & password from Config.js file. \nawait loginPage.successLogin(users.uName, users.uPassword);",
-              "err": {},
-              "uuid": "3aad6d7f-56e8-45d1-a9aa-c1e40be1eed3",
-              "parentUUID": "21e21d19-85fe-4d5f-8c46-f2a36bf74968",
+              "err": {
+                "message": "TypeError: WebDriverWait is not a constructor",
+                "estack": "TypeError: WebDriverWait is not a constructor\n    at new AdminPage (PageObjects\\AdminPage.js:10:22)\n    at Context.<anonymous> (TestCases\\Sanitytest.js:25:21)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+                "diff": null
+              },
+              "uuid": "219901fd-4d8b-4688-921a-e7146d9d14a1",
+              "parentUUID": "39242719-e41a-42e8-a517-9334f9e9513d",
               "isHook": true,
               "skipped": false
             }
@@ -56,7 +60,7 @@
               "title": "\"after each\" hook in \"Sanity Test\"",
               "fullTitle": "Sanity Test \"after each\" hook in \"Sanity Test\"",
               "timedOut": false,
-              "duration": 220,
+              "duration": 216,
               "state": null,
               "speed": null,
               "pass": false,
@@ -65,8 +69,8 @@
               "context": null,
               "code": "//Call resetImplicitWait() function define in the SystemUtil.js file.\nawait systemUtil.resetImplicitWait(10000);\n//Call closeSystem() function define in the SystemUtil,js file. Close the system.\nawait systemUtil.closeSystem();",
               "err": {},
-              "uuid": "b091f2c4-efe4-423c-aeea-bfe48ee2f6e5",
-              "parentUUID": "21e21d19-85fe-4d5f-8c46-f2a36bf74968",
+              "uuid": "5960dd91-0a1f-4aa5-9fd5-8bd676e841bd",
+              "parentUUID": "39242719-e41a-42e8-a517-9334f9e9513d",
               "isHook": true,
               "skipped": false
             }
@@ -74,7 +78,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "1d21d978-1086-4cdf-9a52-12b45eef38db",
+              "uuid": "90fee6fa-3553-4759-9e30-54bd7fa76e76",
               "title": "Login to the System",
               "fullFile": "C:\\Users\\acer\\Desktop\\OrangeMochaPOM\\OrangeMochaPOM\\TestCases\\Sanitytest.js",
               "file": "\\TestCases\\Sanitytest.js",
@@ -85,35 +89,35 @@
                   "title": "Should log in successfully with valid credentials",
                   "fullTitle": "Sanity Test Login to the System Should log in successfully with valid credentials",
                   "timedOut": false,
-                  "duration": 98,
-                  "state": "passed",
-                  "speed": "slow",
-                  "pass": true,
+                  "duration": 0,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
                   "fail": false,
                   "pending": false,
                   "context": null,
                   "code": "//Getting Dashboard Header title from DashboardPage.js file.\nconst dashHeader = await dashboardPage.verifyDashboardHeader();\n//Compare the title with Actual value.\nassert.equal(dashHeader, 'Employee Management', 'Header text does not match the expected value.');",
                   "err": {},
-                  "uuid": "6d97ae30-977e-4e21-bfe6-2027c1e6e57a",
-                  "parentUUID": "1d21d978-1086-4cdf-9a52-12b45eef38db",
+                  "uuid": "448bc1b7-6c83-4a32-8e2a-e73bcd597f56",
+                  "parentUUID": "90fee6fa-3553-4759-9e30-54bd7fa76e76",
                   "isHook": false,
-                  "skipped": false
+                  "skipped": true
                 }
               ],
               "suites": [],
-              "passes": [
-                "6d97ae30-977e-4e21-bfe6-2027c1e6e57a"
-              ],
+              "passes": [],
               "failures": [],
               "pending": [],
-              "skipped": [],
-              "duration": 98,
+              "skipped": [
+                "448bc1b7-6c83-4a32-8e2a-e73bcd597f56"
+              ],
+              "duration": 0,
               "root": false,
               "rootEmpty": false,
               "_timeout": 0
             },
             {
-              "uuid": "8687b1ec-f97e-4cdb-90c8-360b00bc6e84",
+              "uuid": "64b4c113-9038-4e9b-8b5f-f9f44cd0c584",
               "title": "Login to the Admin Module",
               "fullFile": "C:\\Users\\acer\\Desktop\\OrangeMochaPOM\\OrangeMochaPOM\\TestCases\\Sanitytest.js",
               "file": "\\TestCases\\Sanitytest.js",
@@ -124,29 +128,48 @@
                   "title": "Should log in successfully to Admin Module",
                   "fullTitle": "Sanity Test Login to the Admin Module Should log in successfully to Admin Module",
                   "timedOut": false,
-                  "duration": 195,
-                  "state": "passed",
-                  "speed": "slow",
-                  "pass": true,
+                  "duration": 0,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
                   "fail": false,
                   "pending": false,
                   "context": null,
-                  "code": "//Click Side Bar Admin Module\nawait dashboardPage.clickAdminModule();\n//Getting Admin Module Bpard Header title from AdminPage.js file.\nconst adminModhHeader = await adminPage.verifyingAdminModuleHeader();\n//Compare the title with Actual value.\nassert.equal(adminModhHeader, 'HR Administration', 'Header text does not match the expected value.');",
+                  "code": "//Click Side Bar Admin Module.\nawait dashboardPage.clickAdminModule();\n//Getting Admin Module Bpard Header title from AdminPage.js file.\nconst adminModhHeader = await adminPage.verifyingAdminModuleHeader();\n//Compare the title with Actual value.\nassert.equal(adminModhHeader, 'HR Administration', 'Header text does not match the expected value.');",
                   "err": {},
-                  "uuid": "7bdcd60d-a746-4f6b-a763-84a17eefa79b",
-                  "parentUUID": "8687b1ec-f97e-4cdb-90c8-360b00bc6e84",
+                  "uuid": "bb9e80c4-af20-4209-b8d0-804433f5bacd",
+                  "parentUUID": null,
                   "isHook": false,
-                  "skipped": false
+                  "skipped": true
+                },
+                {
+                  "title": "Should adding new job title in successfullt to the Job section",
+                  "fullTitle": "Sanity Test Login to the Admin Module Should adding new job title in successfullt to the Job section",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "//Click Side Bar Admin Module.\nawait dashboardPage.clickAdminModule();\n//Add New Job to the system.\nawait adminPage.addNewJobTitle();",
+                  "err": {},
+                  "uuid": "bd6a0906-bbca-4adb-a88b-3d3ce2b9ed64",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": true
                 }
               ],
               "suites": [],
-              "passes": [
-                "7bdcd60d-a746-4f6b-a763-84a17eefa79b"
-              ],
+              "passes": [],
               "failures": [],
               "pending": [],
-              "skipped": [],
-              "duration": 195,
+              "skipped": [
+                "bb9e80c4-af20-4209-b8d0-804433f5bacd",
+                "bd6a0906-bbca-4adb-a88b-3d3ce2b9ed64"
+              ],
+              "duration": 0,
               "root": false,
               "rootEmpty": false,
               "_timeout": 0
